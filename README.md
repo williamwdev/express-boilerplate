@@ -12,6 +12,8 @@ Complete the following steps to start a new project (NEW-PROJECT-NAME):
 4. Install the node dependencies `npm install`
 5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
 6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+7. Create a mew rep on Github. Run git remote set-url to check current origin & Run git remote set-url origin git@github.com:williamwdev/project-name
+8. Run git add . & git commit -m 'initial commit' & git push
 
 ## Scripts
 
