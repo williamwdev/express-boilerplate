@@ -2,7 +2,7 @@
 
 This is a boilerplate project used for starting new projects!
 
-## Set up
+## Set up new project
 
 Complete the following steps to start a new project (NEW-PROJECT-NAME):
 
@@ -14,6 +14,31 @@ Complete the following steps to start a new project (NEW-PROJECT-NAME):
 6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
 7. Create a mew rep on Github. Run git remote set-url to check current origin & Run git remote set-url origin git@github.com:williamwdev/project-name
 8. Run git add . & git commit -m 'initial commit' & git push
+
+## Deploying server to Heroku
+
+1. Create [Heroku](https://signup.heroku.com/identity) account & install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+2. Run `Heroku --version` & `heroku login`
+3. Make sure to hide secrets in `.env` file locally and ensure this file is listed in `.gitignore` file
+4. Use minimal logging and remove unnecessary console logs
+5. Make and configure a Procfile (Heroku will look for this file so it can determine how to start your server)
+6. Run `touch Procfile` in root directory and make sure `web: node server.js` is in the file
+7. Run `node --version` and add a new section to package.json file with version listed:
+```javascript
+"main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
++ "engines": {
++   "node": "10.11.0"
++ },
+```
+8. Run `npm audit` to check all installed dependencies
+9. Run `heroku craete` and check with `git remote -v` to see a new remote named heroku
+10. Set environmental variables in Heroku by running `heroku config:set API_TOKEN=paste-token-here` and use [UUID Generator](https://www.uuidgenerator.net/)
+
 
 ## Scripts
 
